@@ -97,9 +97,6 @@ void *client_thread_function(void *arg)
 {
 	struct client_property *prop = (struct client_property *) arg ; 
 	
-	const char *we = "welcome !\n" ; 
-	/* 写会客户端 */
-	write(prop->client_fd, we, strlen(we) +1) ; 
 	/* char buf[BUFFER_SIZE] ; */ 
 
 	char * buf = (char *) malloc ( 2 *BUFFER_SIZE *(sizeof(char) ) ) ; 
@@ -277,6 +274,7 @@ void login_user(const char * msg, struct client_property  *prop)
 	prop->is_online = 1 ; 
 	prop->useraccount = account ; 
 	string msg_str(msg_buf) ; 
+
 	string ret = UserManage.Logging(msg_str) ; 
 
 	cout <<"ret = " <<ret <<endl ;
@@ -287,16 +285,50 @@ void login_user(const char * msg, struct client_property  *prop)
 }	
 void recv_msg(const char * msg, struct client_property *prop) 
 {
-	/* msg : 群号或好友账号|用户账号|发送时间|消息内容 */
-	/* 写回：11#sendfrom账号#群号或好友账号#时间#对话内容 */ 
+	/* msg : 发出用户账号|接受群或用户账号|发送时间|消息内容 */
+	/* 写回：11#sendfrom账号#sendto#时间#对话内容 */ 
 	Log("begin: " ) ; 
 	vector<int> sendto ; 
 	string ret = UserManage.Receive(msg, sendto ) ; 
-	const char *strret = ret.c_str() ; 
-	cout<< "ret = " <<strret <<endl ; 
-	for( int account : sendto)
-		send_by_account( account,strret ) ;
-	/* send_by_fd(ret, prop->client_fd ) ; */ 
+	cout <<"here" <<endl ; 
+	cout << "ret = " <<ret <<endl ; 
+	const char * ret_char = ret.c_str() ; 	
+
+	int typeint ; 
+	int sendfrom_acc ; 
+	char tmp[BUFFER_SIZE] ;
+
+	int group_user_id; 
+	sscanf(msg, "%d|%d|%s" , &sendfrom_acc,	&group_user_id,tmp);
+
+	/* 发出者返回 */
+	char send_from_ret[2*BUFFER_SIZE] ; 
+	typeint  = 21 ; 
+	sprintf(send_from_ret , "%d#%d#%s", 
+						typeint,group_user_id ,ret_char ) ; 
+	send_by_fd(send_from_ret , prop->client_fd) ; 	
+
+	/* 接受者返回 */
+	typeint = 11 ;
+	char send_to_ret[2*BUFFER_SIZE] ; 
+	if(group_user_id >39999999)
+	{
+
+		sprintf(send_to_ret , "%d#%d#%d#%s", 
+				typeint, sendfrom_acc, group_user_id, ret_char) ; 
+	}else {
+		sprintf(send_to_ret , "%d#%d#%d#%s",
+				typeint, sendfrom_acc, sendfrom_acc, ret_char) ; 
+	}
+	for( int account : sendto){
+		int fd = get_user_fd(account) ; 
+		send_by_fd(send_to_ret, fd) ; 
+	} 
+	send_by_fd(send_to_ret , prop->client_fd) ;
+
+	cout << "send from ret= " <<send_from_ret <<endl ; 
+	cout << "send to   ret= " << send_to_ret  <<endl  ;
+
 	Log("end: ") ; 
 
 }
@@ -316,18 +348,19 @@ void logout_user(const char * msg, struct client_property *prop)
 }
 void delete_user_group(const char * msg, struct client_property *prop) 
 {
-	/* msg : (a/b)|用户账号|好友账号/群号 */
+	/* msg : 用户账号|好友账号/群号 */
 	/* 写回：13#好友账号|successful */ 
 	Log("begin: " ) ; 
-	char ab ; 
+	int account ; 
 	char msg_buf[BUFFER_SIZE]  ; 
-	sscanf(msg, "%c|%s", &ab, msg_buf ) ; 
+	sscanf(msg, "%d|%s", &account, msg_buf ) ; 
 	string ret ; 
-	if( ab =='a' ){ 
-		ret = UserManage.SelecteGroup(msg_buf) ; 
-	}else if(ab =='b'){
-		ret = UserManage.SelecteAccount(msg_buf) ;
+	if( account > 39999999 ){ 
+		ret = GroupManage.Dissolve(msg_buf) ; 
+	}else{
+		ret = UserManage.SelecteGroup(msg_buf) ;
 	} 
+
 	cout<< "ret = " <<ret <<endl ; 
 	send_by_fd(ret, prop->client_fd ) ; 
 	Log("end: ") ; 

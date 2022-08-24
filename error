@@ -1,0 +1,40 @@
+g++ -c  -g -Wall  server.c UserManage.cpp databases.cpp GroupManage.cpp
+server.c: In function ‘void recv_msg(const char*, client_property*)’:
+server.c:295:14: error: ‘acc’ was not declared in this scope; did you mean ‘acct’?
+  295 |         for( acc in sendt0)
+      |              ^~~
+      |              acct
+server.c:299:15: error: ‘send_from_ret’ was not declared in this scope
+  299 |         send( send_from_ret, fd) ;
+      |               ^~~~~~~~~~~~~
+server.c:299:30: error: ‘fd’ was not declared in this scope
+  299 |         send( send_from_ret, fd) ;
+      |                              ^~
+server.c:304:9: error: expected primary-expression before ‘const’
+  304 |         const char *strret = ret.c_str() ;
+      |         ^~~~~
+server.c:299:35: error: expected ‘)’ before ‘const’
+  299 |         send( send_from_ret, fd) ;
+      |                                   ^
+      |                                   )
+......
+  304 |         const char *strret = ret.c_str() ;
+      |         ~~~~~                      
+server.c:295:12: note: to match this ‘(’
+  295 |         for( acc in sendt0)
+      |            ^
+server.c:304:21: warning: unused variable ‘strret’ [-Wunused-variable]
+  304 |         const char *strret = ret.c_str() ;
+      |                     ^~~~~~
+server.c:309:16: error: ‘strret’ was not declared in this scope; did you mean ‘strsep’?
+  309 |         sscanf(strret , "%d#%d#%d#%s" ,&typeint, &sendfrom_acc, &sendto_acc,tmp);
+      |                ^~~~~~
+      |                strsep
+server.c:294:13: warning: unused variable ‘group_user_id’ [-Wunused-variable]
+  294 |         int group_user_id;
+      |             ^~~~~~~~~~~~~
+GroupManage.cpp: In member function ‘std::string GroupManage::ShowMember(std::string)’:
+GroupManage.cpp:158:39: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::__cxx11::basic_string<char> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  158 |                                 if (i == (CMemeber.size() - 1)) {
+      |                                     ~~^~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Makefile:18: object.o] Error 1
