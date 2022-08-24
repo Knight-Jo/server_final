@@ -1,0 +1,146 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/gdw/socket/test/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+ADD_USER	server.h	/^#define ADD_USER	/;"	d
+ASNI_FG_BLUE	server.h	/^#define ASNI_FG_BLUE	/;"	d
+ASNI_FMT	server.h	/^#define ASNI_FMT(/;"	d
+ASNI_NODE	server.h	/^#define ASNI_NODE	/;"	d
+Account	databases.h	/^	int Account;$/;"	m	struct:User	typeref:typename:int
+AddData	databases.cpp	/^bool DataBases::AddData(int tablenum, string data, int size, const void* blobdata)$/;"	f	class:DataBases	typeref:typename:bool
+AddFriend1	UserManage.cpp	/^string UserManage::AddFriend1(string buf)\/\/buf:用户账号|好友账号；return : 7#Y#好友/;"	f	class:UserManage	typeref:typename:string
+AddImage	databases.cpp	/^bool DataBases::AddImage(int num, int size, const void* blobdata) {$/;"	f	class:DataBases	typeref:typename:bool
+BUFFER_SIZE	server.h	/^#define BUFFER_SIZE	/;"	d
+CC	Makefile	/^CC = g++ $/;"	m
+CFLAG	Makefile	/^CFLAG = -g -Wall $/;"	m
+CHANGE_INFO	server.h	/^#define CHANGE_INFO	/;"	d
+CMember	databases.h	/^	string CMember;$/;"	m	struct:Cluster	typeref:typename:string
+CName	databases.h	/^	string CName;$/;"	m	struct:Cluster	typeref:typename:string
+CNum	databases.h	/^	int CNum;$/;"	m	struct:Cluster	typeref:typename:int
+COwner	databases.h	/^	int COwner;$/;"	m	struct:Cluster	typeref:typename:int
+CREATE_GROUP	server.h	/^#define CREATE_GROUP	/;"	d
+ChangeData	UserManage.cpp	/^string UserManage::ChangeData(string buf)\/\/buf:用户账号|要修改的属性名|修改后的/;"	f	class:UserManage	typeref:typename:string
+ChangeData	databases.cpp	/^bool DataBases::ChangeData(int tablenum, string data, string where, int size, const void* blobda/;"	f	class:DataBases	typeref:typename:bool
+Cluster	databases.h	/^struct Cluster {$/;"	s
+Cluster1	databases.h	/^	vector<Cluster> Cluster1;$/;"	m	class:DataBases	typeref:typename:vector<Cluster>
+CreatGroup	GroupManage.cpp	/^string GroupManage::CreatGroup(string buf) {$/;"	f	class:GroupManage	typeref:typename:string
+D	GroupManage.h	/^	DataBases D;$/;"	m	class:GroupManage	typeref:typename:DataBases
+D	UserManage.h	/^	DataBases D;$/;"	m	class:UserManage	typeref:typename:DataBases
+DATABASES_H	databases.h	/^#define DATABASES_H$/;"	d
+DEBUG	server.c	/^static int DEBUG = 1 ; $/;"	v	typeref:typename:int	file:
+DELETE_USER_GROUP	server.h	/^#define DELETE_USER_GROUP /;"	d
+DISSOLVE_GROUP	server.h	/^#define DISSOLVE_GROUP /;"	d
+DataBases	databases.h	/^	DataBases() {$/;"	f	class:DataBases
+DataBases	databases.h	/^class DataBases {$/;"	c
+DeleteData	databases.cpp	/^bool DataBases::DeleteData(int tablenum, string where) {$/;"	f	class:DataBases	typeref:typename:bool
+DeleteImage	databases.cpp	/^bool DataBases::DeleteImage(int num) {$/;"	f	class:DataBases	typeref:typename:bool
+Dissolve	GroupManage.cpp	/^string   GroupManage::Dissolve(string buf){$/;"	f	class:GroupManage	typeref:typename:string
+GROUPMANAGE_H	GroupManage.h	/^#define GROUPMANAGE_H$/;"	d
+GroupManage	GroupManage.h	/^class GroupManage {$/;"	c
+GroupManage	server.c	/^GroupManage GroupManage ;$/;"	v	typeref:typename:GroupManage
+INVITE_USER	server.h	/^#define INVITE_USER	/;"	d
+Invite	GroupManage.cpp	/^string  GroupManage::Invite(string buf){$/;"	f	class:GroupManage	typeref:typename:string
+JOIN_GROUP	server.h	/^#define JOIN_GROUP	/;"	d
+LIB	Makefile	/^LIB = -lsqlite3 -lpthread $/;"	m
+LISTEN_PORT	server.h	/^#define LISTEN_PORT /;"	d
+LOGIN_USER	server.h	/^#define LOGIN_USER	/;"	d
+LOGOUT_USER	server.h	/^#define LOGOUT_USER	/;"	d
+Log	server.h	/^#define Log(/;"	d
+LogOut	UserManage.cpp	/^string UserManage::LogOut(string buf)\/\/buf:账号; return:(无）$/;"	f	class:UserManage	typeref:typename:string
+LogStatus	databases.h	/^	int LogStatus;$/;"	m	struct:User	typeref:typename:int
+LogSuccess	UserManage.cpp	/^string UserManage::LogSuccess(string buf)\/\/buf:账号|密码|Socket; return:账号#昵称#好友/;"	f	class:UserManage	typeref:typename:string
+Logging	UserManage.cpp	/^string UserManage::Logging(string buf)\/\/buf:账号|密码|Socket; return:9#LogSuccess的return/;"	f	class:UserManage	typeref:typename:string
+MAX_CLIENT_COUNT	server.h	/^#define MAX_CLIENT_COUNT /;"	d
+MAX_SEND_QUEUE_SIZE	server.h	/^#define MAX_SEND_QUEUE_SIZE /;"	d
+MsgRecord	databases.h	/^	string MsgRecord;$/;"	m	struct:Cluster	typeref:typename:string
+OffLineTime	databases.h	/^	string OffLineTime;$/;"	m	struct:User	typeref:typename:string
+Password	databases.h	/^	string Password;$/;"	m	struct:User	typeref:typename:string
+Potrait	databases.h	/^	string Potrait;$/;"	m	struct:User	typeref:typename:string
+RECV_MSG	server.h	/^#define RECV_MSG	/;"	d
+REGISTER_USER	server.h	/^#define REGISTER_USER	/;"	d
+Receive	UserManage.cpp	/^string UserManage::Receive(string buf, vector<int>& Members)\/\/buf:群号或好友账号|用户/;"	f	class:UserManage	typeref:typename:string
+Register	UserManage.cpp	/^string UserManage::Register(string buf) \/\/buf:nickname|password; return:5#账号(string)$/;"	f	class:UserManage	typeref:typename:string
+SEARCH_USER	server.h	/^#define SEARCH_USER	/;"	d
+SEND_MSG	server.h	/^#define SEND_MSG	/;"	d
+SHOW_GROUP_MEMBERS	server.h	/^#define SHOW_GROUP_MEMBERS	/;"	d
+Search	GroupManage.cpp	/^string  GroupManage::Search(string buf){$/;"	f	class:GroupManage	typeref:typename:string
+SearchUser	UserManage.cpp	/^string UserManage::SearchUser(string buf)\/\/buf:该用户账号|被搜索的账号; return : 6#/;"	f	class:UserManage	typeref:typename:string
+SelectData	databases.cpp	/^bool DataBases::SelectData(int tablenum, string where) {$/;"	f	class:DataBases	typeref:typename:bool
+SelecteAccount	UserManage.cpp	/^string UserManage::SelecteAccount(string buf)\/\/buf:用户账号(string);return : 12#Success(成/;"	f	class:UserManage	typeref:typename:string
+SelecteGroup	UserManage.cpp	/^string UserManage::SelecteGroup(string buf)\/\/buf:发出请求的用户账号|好友账号;retu/;"	f	class:UserManage	typeref:typename:string
+ShowMember	GroupManage.cpp	/^string GroupManage::ShowMember(string buf) {$/;"	f	class:GroupManage	typeref:typename:string
+Socket	databases.h	/^	int Socket;$/;"	m	struct:User	typeref:typename:int
+Stringsplit	databases.cpp	/^void Stringsplit(const string& str, const string& splits, vector<string>& res)$/;"	f	typeref:typename:void
+Stringsplit1	GroupManage.cpp	/^void Stringsplit1(const string& str, const string& splits, vector<string>& res)$/;"	f	typeref:typename:void
+UName	databases.h	/^	string UName;$/;"	m	struct:User	typeref:typename:string
+User	databases.h	/^struct User {$/;"	s
+User1	databases.h	/^	vector<User> User1;$/;"	m	class:DataBases	typeref:typename:vector<User>
+UserManage	UserManage.h	/^class UserManage {$/;"	c
+UserManage	server.c	/^UserManage UserManage ; $/;"	v	typeref:typename:UserManage
+_CRT_SECURE_NO_WARNINGS	GroupManage.h	/^#define _CRT_SECURE_NO_WARNINGS$/;"	d
+_CRT_SECURE_NO_WARNINGS	UserManage.h	/^#define _CRT_SECURE_NO_WARNINGS$/;"	d
+_Log	server.h	/^#define _Log(/;"	d
+_SERVER_H	server.h	/^#define _SERVER_H /;"	d
+_USER_MANAGE_H	UserManage.h	/^#define _USER_MANAGE_H /;"	d
+add_client	server.c	/^void add_client(int connectfd, struct sockaddr_in addr ) $/;"	f	typeref:typename:void
+add_user	server.c	/^void add_user(const char * msg, struct client_property  *prop)$/;"	f	typeref:typename:void
+addr	server.h	/^	struct sockaddr_in	addr ; $/;"	m	struct:client_property	typeref:struct:sockaddr_in
+change_info	server.c	/^void change_info(const char * msg, struct client_property  *prop) $/;"	f	typeref:typename:void
+clean	Makefile	/^clean : $/;"	t
+client	server.c	/^struct sockaddr_in client, server ; $/;"	v	typeref:struct:sockaddr_in
+client_fd	server.h	/^	int client_fd ;			\/\/initial value -1 $/;"	m	struct:client_property	typeref:typename:int
+client_prop	server.c	/^struct client_property client_prop[MAX_CLIENT_COUNT] ; $/;"	v	typeref:struct:client_property[]
+client_property	server.h	/^struct client_property{$/;"	s
+client_thread_function	server.c	/^void *client_thread_function(void *arg)$/;"	f	typeref:typename:void *
+connectfd	server.c	/^int listenfd , connectfd ; $/;"	v	typeref:typename:int
+copy_string	server.c	/^char *copy_string(const char * src)$/;"	f	typeref:typename:char *
+create_group	server.c	/^void create_group(const char * msg, struct client_property  *prop) $/;"	f	typeref:typename:void
+delete_user_group	server.c	/^void delete_user_group(const char * msg, struct client_property *prop) $/;"	f	typeref:typename:void
+dissolve_group	server.c	/^void dissolve_group(const char * msg, struct client_property  *prop) $/;"	f	typeref:typename:void
+get_user_fd	server.c	/^int get_user_fd(int useraccount) $/;"	f	typeref:typename:int
+handle_client_message	server.c	/^void handle_client_message(struct client_property *prop, const char *message)$/;"	f	typeref:typename:void
+handle_error	server.h	/^#define handle_error(/;"	d
+handler	databases.h	/^	sqlite3* handler;\/\/���ݿ���$/;"	m	class:DataBases	typeref:typename:sqlite3 *
+init_server	server.c	/^void init_server()$/;"	f	typeref:typename:void
+init_socket	server.c	/^void init_socket()$/;"	f	typeref:typename:void
+invite_user	server.c	/^void invite_user(const char * msg, struct client_property  *prop) $/;"	f	typeref:typename:void
+is_online	server.h	/^	int is_online ; $/;"	m	struct:client_property	typeref:typename:int
+join_group	server.c	/^void join_group(const char * msg, struct client_property  *prop)$/;"	f	typeref:typename:void
+listen_thread_function	server.c	/^void *listen_thread_function(void *arg) $/;"	f	typeref:typename:void *
+listenfd	server.c	/^int listenfd , connectfd ; $/;"	v	typeref:typename:int
+login_user	server.c	/^void login_user(const char * msg, struct client_property  *prop) $/;"	f	typeref:typename:void
+logout_user	server.c	/^void logout_user(const char * msg, struct client_property *prop) $/;"	f	typeref:typename:void
+main	main.c	/^int main()$/;"	f	typeref:typename:int
+main	test_group.cpp	/^int main()$/;"	f	typeref:typename:int
+main.o	Makefile	/^main.o : main.c $/;"	t
+message	server.h	/^	char *message ; $/;"	m	struct:send_property	typeref:typename:char *
+object.o	Makefile	/^object.o : server.c UserManage.cpp databases.cpp GroupManage.cpp  $/;"	t
+pStmt	databases.h	/^	sqlite3_stmt* pStmt;\/\/�����õ�sql���$/;"	m	class:DataBases	typeref:typename:sqlite3_stmt *
+queue_lock	server.c	/^pthread_mutex_t queue_lock ; $/;"	v	typeref:typename:pthread_mutex_t
+recv_msg	server.c	/^void recv_msg(const char * msg, struct client_property *prop) $/;"	f	typeref:typename:void
+register_user	server.c	/^void register_user(const char * msg, struct client_property  *prop) $/;"	f	typeref:typename:void
+remove_client	server.c	/^void remove_client(struct client_property *prop)$/;"	f	typeref:typename:void
+run	Makefile	/^run : server $/;"	t
+save_offline_message	server.c	/^void save_offline_message(struct send_property msg)$/;"	f	typeref:typename:void
+search_user	server.c	/^void search_user(const char * msg, struct client_property  *prop) $/;"	f	typeref:typename:void
+send_by_account	server.c	/^void send_by_account(int account, const char *msg)$/;"	f	typeref:typename:void
+send_by_fd	server.c	/^void send_by_fd(string msg, int fd)$/;"	f	typeref:typename:void
+send_msg	server.c	/^void send_msg(const char * msg, struct client_property *prop) $/;"	f	typeref:typename:void
+send_property	server.h	/^struct send_property{$/;"	s
+send_q_head	server.c	/^int send_q_head, send_q_tail ; $/;"	v	typeref:typename:int
+send_q_tail	server.c	/^int send_q_head, send_q_tail ; $/;"	v	typeref:typename:int
+send_queue	server.c	/^struct send_property send_queue[MAX_SEND_QUEUE_SIZE] ; $/;"	v	typeref:struct:send_property[]
+send_thread_function	server.c	/^void *send_thread_function (void *arg) $/;"	f	typeref:typename:void *
+server	Makefile	/^server : main.o object.o $/;"	t
+server	server.c	/^struct sockaddr_in client, server ; $/;"	v	typeref:struct:sockaddr_in
+show_group_members	server.c	/^void show_group_members(const char *msg, struct client_property *prop) $/;"	f	typeref:typename:void
+useraccount	server.h	/^	int  useraccount ; $/;"	m	struct:send_property	typeref:typename:int
+useraccount	server.h	/^	int useraccount ; $/;"	m	struct:client_property	typeref:typename:int
+~DataBases	databases.h	/^	~DataBases() {$/;"	f	class:DataBases
